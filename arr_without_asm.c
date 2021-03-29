@@ -1,9 +1,16 @@
-// nasm -felf combining.asm && gcc -m32 arr_with_asm.c combining.o -o arr2 && ./arr2
+// gcc -m32 arr_without_asm.c -o arr && ./arr
 
 #include <stdio.h>
 #include <stdlib.h>
 
-extern void shi(int, int*); // int arr_len, int* arr
+void shi(int arr_len, int* arr)
+{
+    int remember = arr[0];
+    for (int j = 0; j < arr_len - 1; j++) {
+        arr[j] = arr[j + 1];
+    }      
+    arr[arr_len - 1] = remember;
+}
 
 int main()
 {
@@ -17,7 +24,7 @@ int main()
         arr[i] = rand() % (arr_len * 2);
     }     
     
-    printf("how many shifts to apply? (with asm method)\n");
+    printf("how many shifts to apply? (without asm method)\n");
     scanf ("%d", &shift);
 
     printf("you had: ");

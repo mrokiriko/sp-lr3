@@ -1,7 +1,7 @@
 section .text                            ; секция кода
-global MatrixFill                        ; стандартная точка входа для gcc
+global shi                               ; стандартная точка входа для gcc
 
-MatrixFill:                              ; точка входа программы
+shi:                                     ; точка входа программы
    push    ebp                           ; подготовка стека с помощью регистра BP
    mov     ebp, esp
 
