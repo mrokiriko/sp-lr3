@@ -1,4 +1,4 @@
-// gcc -m32 arr_without_asm.cpp -o arr -lstdc++
+// gcc -m32 arr_without_asm.cpp -o arr -lstdc++ && ./arr
 
 #include <stdio.h>
 #include <iostream>
